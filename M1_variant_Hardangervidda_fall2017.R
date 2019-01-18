@@ -1,7 +1,7 @@
 
 ### JAGS-model 'M1_variant - for Hardangervidda using data available at Oct. 17th 2017':
 ###
-### Total counts in summer until 2017
+### Total counts in summer until the year 2017
 ### Harvest data unti 2016
 ### Calf census data until 2017
 ### Structural surveys until 2016
