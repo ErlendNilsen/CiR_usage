@@ -61,6 +61,8 @@ cat("
     
     for (t in 1:(T-1)){  
     
+    
+
     Dens[t-1] <- X0f[t-1] + X0m[t-1] + X1f[t-1] + X1m[t-1] + Xadf[t-1] + Xadm[t-1]
     logit(f[t]) <- mean.f+beta1*Dens[t-1]+eps_f[t]
     eps_f[t]~dnorm(0, tau_f)

@@ -5,7 +5,7 @@
 ### Harvest data unti 2016
 ### Calf census data until 2017
 ### Structural surveys until 2016
-### ie. last data for estimation: N[2017] and X[2016], SU[2017] & J[2017]; 
+### ie. last data for estimation: N[2017] and X[2016], SU[2017] & J[2017] 
 
 
 sink("jagsMod_M1_HV_variant.bug")
@@ -106,11 +106,12 @@ cat("
     J[T] ~ dbin(p1[T], round((N0f[T]+N0m[T])/ilogit(mean.f)))
     SU[T] ~ dbin(p1[T], round(N1m[T]+N1f[T]+Nadf[T]))
 
-    for (t in 1:(T-1)){
+    for (t in 2:T){
     
-    J[t] ~ dbin(p1[t], round((N0f[t]+N0m[t])/phi1[t]))
+    J[t] ~ dbin(p1[t], round((N0f[t]+N0m[t])/phi1[t-1]))
     SU[t] ~ dbin(p1[t], round(N1m[t]+N1f[t]+Nadf[t]))
                     }
+    
 
     for(t in 1:(T-1)){
                     
@@ -230,11 +231,12 @@ cat("
     J[T] ~ dbin(p1[T], round((N0f[T]+N0m[T])/ilogit(mean.f)))
     SU[T] ~ dbin(p1[T], round(N1m[T]+N1f[T]+Nadf[T]))
     
-    for (t in 1:(T-1)){
+    for (t in 2:T){
     
-    J[t] ~ dbin(p1[t], round((N0f[t]+N0m[t])/phi1[t]))
+    J[t] ~ dbin(p1[t], round((N0f[t]+N0m[t])/phi1[t-1]))
     SU[t] ~ dbin(p1[t], round(N1m[t]+N1f[t]+Nadf[t]))
-    }
+                    }
+    
     
     for(t in 1:(T-1)){
     

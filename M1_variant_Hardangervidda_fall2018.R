@@ -116,11 +116,12 @@ cat("
     J[T] ~ dbin(p1[T], round((N0f[T]+N0m[T])/ilogit(mean.f)))
     SU[T] ~ dbin(p1[T], round(N1m[T]+N1f[T]+Nadf[T]))
 
-    for (t in 1:(T-1)){
+    for (t in 2:T){
     
-    J[t] ~ dbin(p1[t], round((N0f[t]+N0m[t])/phi1[t]))
+    J[t] ~ dbin(p1[t], round((N0f[t]+N0m[t])/phi1[t-1]))
     SU[t] ~ dbin(p1[t], round(N1m[t]+N1f[t]+Nadf[t]))
                     }
+    
 
     for(t in 1:(T-1)){
                     
@@ -240,11 +241,12 @@ cat("
     J[T] ~ dbin(p1[T], round((N0f[T]+N0m[T])/ilogit(mean.f)))
     SU[T] ~ dbin(p1[T], round(N1m[T]+N1f[T]+Nadf[T]))
     
-    for (t in 1:(T-1)){
+    for (t in 2:T){
     
-    J[t] ~ dbin(p1[t], round((N0f[t]+N0m[t])/phi1[t]))
+    J[t] ~ dbin(p1[t], round((N0f[t]+N0m[t])/phi1[t-1]))
     SU[t] ~ dbin(p1[t], round(N1m[t]+N1f[t]+Nadf[t]))
-    }
+                    }
+    
     
     for(t in 1:(T-1)){
     
@@ -365,11 +367,12 @@ cat("
     J[T] ~ dbin(p1[T], round((N0f[T]+N0m[T])/ilogit(mean.f)))
     SU[T] ~ dbin(p1[T], round(N1m[T]+N1f[T]+Nadf[T]))
     
-    for (t in 1:(T-1)){
+    for (t in 2:T){
     
-    J[t] ~ dbin(p1[t], round((N0f[t]+N0m[t])/phi1[t]))
+    J[t] ~ dbin(p1[t], round((N0f[t]+N0m[t])/phi1[t-1]))
     SU[t] ~ dbin(p1[t], round(N1m[t]+N1f[t]+Nadf[t]))
-    }
+                    }
+    
     
     for(t in 1:(T-1)){
     
